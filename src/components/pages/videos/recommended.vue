@@ -1,7 +1,7 @@
 <template lang="pug">
 section.section
   .container
-    h2.title.is-5 #[strong Новое]
+    h2.title.is-5 #[strong Рекомендуем]
     video-list(:videos="videos")
 </template>
 
@@ -9,7 +9,6 @@ section.section
 import store from '@store'
 import util from '@utils'
 import filters from '@filters'
-import moment from 'moment'
 import VideoList from '@components/VideoList.vue'
 
 export default {
@@ -32,11 +31,10 @@ export default {
       store.fetchTopics().then(topics => {
         const params = {
           q: util.prepareQuery(topics),
-          order: filters.order[2].value,
+          order: filters.order[3].value,
           maxResults: this.limit,
-          publishedAfter: moment().subtract(3, 'days').toISOString()
-        }
-
+          publishedAfter: filters.timeframe[3].value
+        };
         store.fetchVideos(params).then(result => {
           this.videos = result.videos
           this.$Progress.finish()

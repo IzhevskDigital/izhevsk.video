@@ -7,21 +7,23 @@ const title = 'For all'
 export default {
   app: {
     name: 'Video Izhevsk',
-    url: 'https://izhevsk.github.io/izhevsk.video/',
+    url: 'https://izhevskdigital.github.io/izhevsk.video/',
     title: title,
     description: ' ',
-    author: 'Izhevsk',
+    author: 'Izhevsk Digital',
     logo: {
-      normal: 'build/images/logo.svg',
-      mini: 'build/images/logo-mini.svg',
-      share: 'build/images/weblearn-banner.png'
+      normal: 'dist/logo.png',
+      mini: 'dist/logo.png',
+      share: 'dist/logo.png'
     },
     github: {
-      username: 'izhevsk',
-      repo: 'izhevsk/izhevsk.video'
+      username: 'izhevskdigital',
+      repo: 'izhevskdigital/izhevsk.video'
     },
     links: [
-      '<a class="github-button" href="https://github.com/izhevsk/izhevsk.video" data-count-href="/izhevsk/izhevsk.video/stargazers" data-count-api="/repos/izhevsk/izhevsk.video#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star izhevsk/izhevsk.video on GitHub">Star</a>'
+      '<a class="fa fa-github" href="https://github.com/izhevskDigital/izhevsk.video" data-count-href="/izhevskdigital/izhevsk.video/stargazers" data-count-api="/repos/izhevskdigital/izhevsk.video#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star izhevskdigital/izhevsk.video on GitHub"></a>',
+      '<a><img src="http://bulma.io/images/bulma-logo.png" width="112" height="28"></a>',
+      '<a><img src="static/logo.png" style="width:28px" alt="Vue.js"></a>'
     ]
   },
   api: {
