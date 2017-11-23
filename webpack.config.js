@@ -58,7 +58,21 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, 'src/')
+      '@': path.resolve(__dirname, 'src/'),
+      '@api': path.resolve('src/api'),
+      '@filters': path.resolve('src/filters'),
+      '@assets': path.resolve('src/assets'),
+      '@components': path.resolve('src/components'),
+      '@config': path.resolve('src/config.js'),
+      '@events': path.resolve('src/events'),
+      '@pages': path.resolve('src/components/pages'),
+      '@store': path.resolve('src/store'),
+      '@models': path.resolve('src/store/models'),
+      '@topics': path.resolve('src/topics'),
+      '@transformers': path.resolve('src/store/transformers'),
+      '@utils': path.resolve('src/utils'),
+      '@widgets': path.resolve('src/widgets'),
+      '@router': path.resolve('src/router.js')
     }
   },
   devServer: {
@@ -75,8 +89,12 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
+    // copy custom static assets
     new CopyWebpackPlugin([
-      { from: 'src/static' }
+      {
+        from: path.resolve('static'),
+        ignore: ['.*']
+      }
     ]),
     new webpack.DefinePlugin({
       'process.env': {
